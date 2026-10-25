@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1224">
+  <title>DevOps Task Manager</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="layout">
+    <header class="site-header">
+      <div class="brand-mark" aria-hidden="true">✓</div>
+      <div>
+        <p class="eyebrow">MY DEVOPS LAB PROJECT</p>
+        <h1>Task Manager<span class="dot">.</span></h1>
+      </div>
+      <span class="environment"><span class="live-dot"></span> Docker-powered</span>
+    </header>
+
+    <section class="hero" aria-labelledby="section-heading">
+      <div>
+        <p class="eyebrow">YOUR DAILY WORKSPACE</p>
+        <h2 id="section-heading">Make progress,<br><em>one task at a time.</em></h2>
+        <p class="hero-description">Add a task, mark it done, and keep it saved even when containers restart.</p>
+      </div>
+      <div class="summary" aria-label="Task summary">
+        <div><strong id="total-count">0</strong><span>Total tasks</span></div>
+        <div><strong id="done-count">0</strong><span>Completed</span></div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="tasks-heading">
+      <div class="panel-heading">
+        <div><p class="eyebrow">TO-DO LIST</p><h3 id="tasks-heading">Your tasks</h3></div>
+        <span id="pending-count" class="count-badge">0 remaining</span>
+      </div>
+
+      <form id="task-form" class="task-form">
+        <label class="sr-only" for="task-input">Task title</label>
+        <input id="task-input" name="title" placeholder="What do you need to do?" required maxlength="120" autocomplete="off">
+        <button id="add-task-btn" type="submit"><span aria-hidden="true">+</span> Add task</button>
+      </form>
+      <p id="success-message" class="status-message" role="status" aria-live="polite"></p>
+      <ul id="task-list" class="task-list" aria-label="Saved tasks"></ul>
+      <div id="empty-state" class="empty-state" hidden>
+        <div aria-hidden="true" class="empty-icon">☑</div>
+        <p><strong>Nothing here yet</strong></p>
+        <p>Add your first task above to get started.</p>
+      </div>
+    </section>
+    <footer>Built with <strong>Nginx + Flask + PostgreSQL</strong> · DevOps Mid-Term Lab</footer>
+  </main>
+</body>
+</html>
