@@ -27,7 +27,7 @@ def health():
     try:
         with db_connection() as conn:
             conn.execute("SELECT 1")
-        return jsonify(status="ok", host=socket.gethostname())
+        return jsonify(status="200", host=socket.gethostname()), 200
     except psycopg.Error:
         app.logger.exception("Database health check failed")
         return jsonify(status="unhealthy"), 503
